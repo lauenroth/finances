@@ -1,0 +1,21 @@
+{
+  "name": "finances",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Jörg Lauenroth",
+  "dependencies": {
+    "mobx": "^5.6.0",
+    "mobx-react": "^5.4.2",
+    "next": "^7.0.2",
+    "next-routes": "^1.4.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.1"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development node ./server.js",
+    "build": "next build ./src/",
+    "start": "NODE_ENV=production node ./server.js"
+  }
+}
