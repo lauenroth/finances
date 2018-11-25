@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: #43a3ff;
+  background-color: ${props => props.theme.colors.background.tertinary};
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: ${props => props.theme.colors.text.tertinary};
   cursor: pointer;
   font-size: 16px;
   padding: 0 20px;
@@ -13,12 +13,11 @@ const Button = styled.button`
 
 const FixedButton = styled.button`
   align-content: center;
-  background-color: #202a55;
-  color: #fff;
+  background-color: ${props => props.theme.colors.background.primary};
   border: none;
   border-radius: 50px;
   bottom: 20px;
-  color: #fff;
+  color: ${props => props.theme.colors.text.tertinary};
   cursor: pointer;
   display: flex;
   justify-content: center;
