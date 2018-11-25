@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html, body {
     background-color: #eee;
-    color: #222;
+    color: #121f3e;
   }
   body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -29,10 +29,18 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     width: 100%;
   }
+
   #__next {
     display: flex;
     height: 100%;
     width: 100%;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+  }
+  h3 {
+    margin: 0;
   }
 `;
 

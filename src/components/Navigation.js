@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartBar, faFileInvoice, faClock, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 class Navigation extends React.Component {
   render() {
@@ -7,9 +10,26 @@ class Navigation extends React.Component {
       <NavigationWrapper>
         <h1>Finances</h1>
         <ul>
-          <li><a href="#expenses">Expenses</a></li>
-          <li><a href="#time-tracking">Time tracking</a></li>
-          <li><a href="#invoices">Invoices</a></li>
+          <li>
+            <Link prefetch href="/">
+              <a href="/"><Icon><FontAwesomeIcon icon={faChartBar} /></Icon> Expenses</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href="/time-tracking">
+              <a href="/time-tracking"><Icon><FontAwesomeIcon icon={faClock} /></Icon> Time tracking</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href="/invoices">
+              <a href="/invoices"><Icon><FontAwesomeIcon icon={faFileInvoice} /></Icon> Invoices</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href="/clients">
+              <a href="/clients"><Icon><FontAwesomeIcon icon={faUsers} /></Icon> Clients</a>
+            </Link>
+          </li>
         </ul>
       </NavigationWrapper>
     );
@@ -17,8 +37,8 @@ class Navigation extends React.Component {
 }
 
 const NavigationWrapper = styled.nav`
-  background-color: #202a55;
-  color: #f3f3f3;
+  background-color: ${props => props.theme.colors.background.primary};
+  color: ${props => props.theme.colors.text.primary};
   flex-basis: 220px;
 
   h1 {
@@ -37,14 +57,29 @@ const NavigationWrapper = styled.nav`
     list-style: none;
   }
   a {
-    color: #f3f3f3;
-    display: block;
-    padding: 20px;
+    align-items: center;
+    color: ${props => props.theme.colors.text.primary};
+    display: flex;
+    height: 60px;
+    padding: 0 10px;
     text-decoration: none;
+    transition: .2s background-color, .2s color;
 
     &:hover {
-      text-decoration: underline;
+      background-color: ${props => props.theme.colors.background.secondary};
+      color: ${props => props.theme.colors.text.primary};
     }
+  }
+`;
+
+const Icon = styled.div`
+  color: ${props => props.theme.colors.text.secondary};
+  text-align: center;
+  width: 40px;
+
+  svg {
+    height: 30px;
+    width: 30px;
   }
 `;
 
